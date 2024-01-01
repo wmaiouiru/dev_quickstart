@@ -1,0 +1,50 @@
+
+1) Error: Invalid configuration property gsheets.credentials-path: file does not exist: /var/secrets/gsheets/stock-trading_food-compare-ae61b-670d32f24081.json (for class SheetsConfig.credentialsFilePath)
+
+2) Error: Configuration property 'catalog' was not used
+
+2 errors
+
+======================
+Full classname legend:
+======================
+SheetsConfig: "io.trino.plugin.google.sheets.SheetsConfig"
+========================
+End of classname legend:
+========================
+
+io.airlift.bootstrap.ApplicationConfigurationException: Configuration errors:
+
+1) Error: Invalid configuration property gsheets.credentials-path: file does not exist: /var/secrets/gsheets/stock-trading_food-compare-ae61b-670d32f24081.json (for class SheetsConfig.credentialsFilePath)
+
+2) Error: Configuration property 'catalog' was not used
+
+2 errors
+
+======================
+Full classname legend:
+======================
+SheetsConfig: "io.trino.plugin.google.sheets.SheetsConfig"
+========================
+End of classname legend:
+========================
+
+	at io.airlift.bootstrap.Bootstrap.configure(Bootstrap.java:217)
+	at io.airlift.bootstrap.Bootstrap.initialize(Bootstrap.java:246)
+	at io.trino.plugin.google.sheets.SheetsConnectorFactory.create(SheetsConnectorFactory.java:52)
+	at io.trino.connector.DefaultCatalogFactory.createConnector(DefaultCatalogFactory.java:200)
+	at io.trino.connector.DefaultCatalogFactory.createCatalog(DefaultCatalogFactory.java:118)
+	at io.trino.connector.LazyCatalogFactory.createCatalog(LazyCatalogFactory.java:43)
+	at io.trino.connector.StaticCatalogManager.lambda$loadInitialCatalogs$1(StaticCatalogManager.java:157)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:31)
+	at java.base/java.util.concurrent.ExecutorCompletionService.submit(ExecutorCompletionService.java:186)
+	at io.trino.util.Executors.executeUntilFailure(Executors.java:41)
+	at io.trino.connector.StaticCatalogManager.loadInitialCatalogs(StaticCatalogManager.java:151)
+	at io.trino.server.Server.doStart(Server.java:144)
+	at io.trino.server.Server.lambda$start$0(Server.java:91)
+	at io.trino.$gen.Trino_435____20240101_001132_1.run(Unknown Source)
+	at io.trino.server.Server.start(Server.java:91)
+	at io.trino.server.TrinoServer.main(TrinoServer.java:38)

@@ -1,0 +1,32 @@
+image:
+  tag: "435"
+server:
+  workers: 3
+coordinator:
+  jvm:
+    maxHeapSize: "8G"
+worker:
+  jvm:
+    maxHeapSize: "8G"
+web:
+  enabled: true
+additionalCatalogs:
+  postgresql: |-
+    connector.name=postgresql
+    connection-url=jdbc:postgresql://<IP_ADDRESS>:5432/price_target_dev
+    connection-user=<USER>
+    connection-password=<PASSWORD>
+postgresql:
+  service:
+    type: NodePort
+    port: 5432
+    targetPort: 5432
+    nodePort: 30000  # Choose an available node port
+    externalIPs:
+      - 10.0.0.34
+deployment:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
