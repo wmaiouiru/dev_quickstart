@@ -14,7 +14,7 @@ brew install helm
 # Start a k8s cluter
 ## start colima
 ```
-colima start --cpu 8 --memory 32 --disk 100
+colima start --cpu 8 --memory 32 --disk 100 -a x86_64
 colima status
 docker ps
 ```
